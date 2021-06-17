@@ -1,0 +1,32 @@
+{
+    "leftMenu": {
+        "User Management": "사용자 관리",
+        "Template Management": "템플릿 관리",
+        "Mail Management": "메일 관리",
+        "Send Mail": "메일을 보내다",
+        "Manage attachments": "첨부 파일 관리",
+        "Create Request": "요청 생성",
+        "Assignment": "할당",
+        "Request Approval": "승인 요청",
+        "Search": "검색",
+        "Search Template": "검색 템플릿",
+        "Create Template": "템플릿 생성",
+        "Search Mail": "메일 검색",
+        "Blocked Mails": "차단 된 메일"
+    },
+    "Create user creation request":"생성 사용자 생성 요청",
+    "First Name":"이름",
+    "Last Name":"성",
+    "User Name":"사용자 이름",
+    "Password":"암호",
+    "Email":"Email",
+    "Role":"역할",
+    "Create":"창조하다",
+    "Reset":"초기화",
+    "Assign Request": "Assign Request",
+    "Assign": "양수인",
+    "Search": "검색",
+    "Manager": "매니저",
+    "Sender": "Sender",
+    "Request Date":"Request Date"
+}

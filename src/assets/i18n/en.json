@@ -1,0 +1,33 @@
+{
+       "leftMenu": {
+        "User Management": "User Management",
+        "Template Management": "Template Management",
+        "Mail Management": "Mail Management",
+        "Send Mail": "Send Mail",
+        "Manage attachments": "Manage attachments",
+        "Create Request": "Create Request",
+        "Assignment": "Assignment",
+        "Request Approval": "Request Approval",
+        "Search": "Search",
+        "Search Template": "Search Template ",
+        "Create Template": "Create Template",
+        "Search Mail": "Search Mail",
+        "Blocked Mails": "Blocked Mails"
+    },
+    "Create user creation request":"Create user creation request",
+    "First Name":"First Name",
+    "Last Name":"Last Name",
+    "User Name":"User Name",
+    "Password":"Password",
+    "Email":"Email",
+    "Role":"Role",
+    "Create":"Create",
+    "Reset":"Reset",
+    "Assign Request": "Assign Request",
+    "Assign": "Assign",
+    "Search": "Search",
+    "Manager": "Manager",
+    "Sender": "Sender",
+    "Request Date":"Request Date"
+    
+}

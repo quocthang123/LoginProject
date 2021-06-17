@@ -1,0 +1,32 @@
+{
+    "leftMenu": {
+        "User Management": "Quản lý User",
+        "Template Management": "Quản lý Template",
+        "Mail Management": "Quản lý Mail",
+        "Send Mail": "Gửi Mail",
+        "Manage attachments": "Quản lý file đính kèm",
+        "Create Request": "Yêu cầu tạo User",
+        "Assignment": "Assignment",
+        "Request Approval": "Tạo User",
+        "Search": "Tìm kiếm User",
+        "Search Template": "Tìm kiếm Template ",
+        "Create Template": "Tạo Tempalte",
+        "Search Mail": "Tìm kiếm Mail",
+        "Blocked Mails": "Danh sách mail chặn"
+    },
+    "Create user creation request":"Tạo yêu cầu tạo người dùng",
+    "First Name":"Tên",
+    "Last Name":"Họ",
+    "User Name":"Tên đăng nhập",
+    "Password":"Mật khẩu",
+    "Email":"Email",
+    "Role":"Chức vụ",
+    "Create":"Tạo",
+    "Reset":"Hủy",
+    "Assign Request": "Assign Request",
+    "Assign": "Assign",
+    "Search": "Tìm Kiếm",
+    "Manager": "Người phụ trách",
+    "Sender": "Người tạo request",
+    "Request Date":"Ngày tạo request"
+}
