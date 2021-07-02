@@ -12,9 +12,14 @@ export class AuthenticationService {
     public currentUser: Observable<User>;
 
     constructor(private http: HttpClient) {
-        
+        console.log("====1=====");
+        console.log(localStorage);
         this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')!));
+        console.log("====2=====");
+        console.log(this.currentUserSubject);
         this.currentUser = this.currentUserSubject.asObservable();
+        console.log("====3=====");
+        console.log(this.currentUser);
     }
 
     public get currentUserValue(): User {

@@ -12,6 +12,8 @@ export class AlertService {
         this.router.events.subscribe(event => {
             if (event instanceof NavigationStart) {
                 if (this.keepAfterRouteChange) {
+                    console.log('====4====');
+                    console.log(this);
                     // only keep for a single route change
                     this.keepAfterRouteChange = false;
                 } else {

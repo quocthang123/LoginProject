@@ -1,13 +1,13 @@
 <!-- nav -->
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+<!-- <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
   <div class="navbar-nav">
       <a class="nav-item nav-link" routerLink="/">Home</a>
       <a class="nav-item nav-link" (click)="logout()">Logout</a>
   </div>
-</nav>
+</nav> -->
 
 <!-- main app container -->
-<div class="jumbotron">
+<!-- <div class="jumbotron">
   <div class="container">
       <div class="row">
           <div class="col-sm-6 offset-sm-3">
@@ -16,14 +16,84 @@
           </div>
       </div>
   </div>
-</div>
+</div> -->
 
-<!-- credits -->
-<div class="text-center">
-  <p>
-      <a href="https://jasonwatmore.com/post/2019/06/10/angular-8-user-registration-and-login-example-tutorial" target="_top">Angular 8 - User Registration and Login Example & Tutorial</a>
-  </p>
-  <p>
-      <a href="https://jasonwatmore.com" target="_top">JasonWatmore.com</a>
-  </p>
+<!-- ========================TOP-MENU======================== -->
+<div id="top-menu" *ngIf="currentUser" class="top-menu">
+  <!-- =============LOGO============= -->
+  <div id="top-left-menu-" class="logo">
+    <a class="align-middle" href=" ">
+      <h3 style="line-height: 1.5;">MSYS</h3>
+    </a>
+  </div>
+  <!-- END LOGO -->
+  <!-- =============TOP-RIGHT-MENU============= -->
+  <div id="top-right-menu" style="width: calc(100% - 250px);">
+    <div class="top-menu-main">
+      <a>Doccument</a>
+      <a>Event</a>
+      <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+        id="language-menu">Language<i style="font-size: 12px;">({{currentLanguage}})</i></a>
+      <div class="dropdown-menu" aria-labelledby="language-menu">
+        <a class="dropdown-item"  (click)="changeLanguage('en')">English</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item"  (click)="changeLanguage('ko')">Korea</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" (click)="changeLanguage('vi')">Tiếng Việt</a>
+      </div>
+    </div>
+    <div class="top-menu-scrum">
+      <div class="left">
+        <span>Home</span>
+        <span *ngIf="menuLevel1Name && menuLevel1Name.length>0">/{{"leftMenu."+menuLevel1Name | translate}}</span>
+        <span *ngIf="menuLevel2Name && menuLevel2Name.length>0">/{{"leftMenu."+menuLevel2Name | translate}}</span>
+      </div>
+      <div class="right">
+        <i class="fa fa-user-circle"></i>
+        <span>(role) User name</span>
+        <a (click)="logout()" style="padding-left: 15px; text-decoration: #fff;">Logout</a>
+      </div>
+    </div>
+  </div>
+  <!-- END TOP-RIGHT-MENU -->
+</div>
+<!-- END TOP-MENU -->
+<div class="content" >
+  <div id="left_menu" *ngIf="currentUser" class="left_menu" style="height: calc(100vh - 80px);">
+    <ul class="">
+      <h5>Menu List</h5>
+      <div id="accordion" class="accordion">
+        <ng-container *ngFor="let menu of menus">
+          <li class="parent-li">
+            <a href="#{{ menu.url? menu.url:menu.menuId }}" data-toggle="collapse" role="button" aria-expanded="false"
+              [ngClass]="!(menu.childsMenu === undefined || menu.childsMenu.length == 0)? 'dropdown-toggle ' : ''"
+              [class.selectedMenu] = "menu.menuName === menuLevel1Name"
+              [attr.aria-controls]=menu.menuId (click)="(menu.url && menu.url.length >0)? clickMenu(menu) : ''">
+              {{ "leftMenu."+menu.menuName | translate}}
+            </a>
+            <ul class="list-unstyled collapse" id="{{ menu.menuId }}" data-parent="#accordion">
+              <li *ngFor="let childMenu of menu.childsMenu">
+                <a [routerLink]="''+[childMenu.url]" (click)="clickChildMenu(menu, childMenu)" [ngClass]="childMenu.menuName == menuLevel2Name ? 'selectedMenu' : ''"  id={{childMenu.menuId}}>
+                  {{ "leftMenu."+childMenu.menuName | translate }}
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ng-container>
+      </div>
+
+    </ul>
+  </div>
+
+
+  <!-- Page Content Holder -->
+  <div [ngClass]="currentUser ?'calc-left-menu':'full-size'" style=" position: relative; " [ngStyle]="{'width':currentUser  ? 'calc(100% - 250px)' : '100%'}">
+    <div style="width:100%; margin-top: 0;" >
+      <router-outlet></router-outlet>
+    </div>
+    <!-- <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple" [fullScreen]="true">
+    <p style="font-size: 20px; color: rgb(255, 255, 255)">Loading...</p>
+  </ngx-spinner> -->
+
+  </div>
 </div>
